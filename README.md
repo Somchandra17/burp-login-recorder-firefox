@@ -4,6 +4,10 @@ An unofficial Firefox port of PortSwigger's **[Login Recorder for Burp Suite](ht
 
 It records a login sequence (typing, clicks, navigation, new tabs, iframes and passkeys) in the browser and outputs the JSON script that Burp Suite uses for **recorded login** authentication in scans. The output format is unchanged from the Chrome version.
 
+<p align="center">
+  <img src="docs/popup.png" alt="Login Recorder for Burp Suite popup in Firefox" width="480">
+</p>
+
 > **Disclaimer:** This project is not affiliated with or endorsed by PortSwigger. The original extension, its UI, images and in-page scripts are PortSwigger's work; this repo only adapts them to run on Firefox. If PortSwigger asks for this to be taken down, it will be.
 
 ## Original extension
