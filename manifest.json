@@ -1,0 +1,70 @@
+{
+    "manifest_version": 3,
+    "name": "Login Recorder for Burp Suite",
+    "version": "3.0.5",
+    "description": "Improve your Burp Suite scan coverage by manually capturing how to perform complex actions on your website.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "login-recorder-for-burp@firefox-port.local",
+            "strict_min_version": "128.0",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
+        }
+    },
+    "background": {
+        "scripts": ["background/background.js"]
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_start",
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content-scripts/classes/Recorder.js"],
+            "all_frames": true,
+            "match_about_blank": true
+        }
+    ],
+    "action": {
+        "default_title": "Login Recorder for Burp Suite",
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "images/WebApp-Recorder-16.png",
+            "32": "images/WebApp-Recorder-32.png",
+            "48": "images/WebApp-Recorder-48.png",
+            "128": "images/WebApp-Recorder-128.png"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs",
+        "clipboardWrite",
+        "webNavigation",
+        "privacy",
+        "notifications",
+        "webRequest",
+        "scripting"
+    ],
+    "host_permissions": ["https://*/*", "http://*/*"],
+    "icons": {
+        "16": "images/WebApp-Recorder-16.png",
+        "32": "images/WebApp-Recorder-32.png",
+        "48": "images/WebApp-Recorder-48.png",
+        "128": "images/WebApp-Recorder-128.png"
+    },
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": true
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "images/key.svg",
+                "images/key-black.svg",
+                "images/alert-triangle.svg",
+                "popup/fonts/Roboto-Medium.woff2"
+            ],
+            "matches": ["https://*/*", "http://*/*"]
+        }
+    ]
+}
